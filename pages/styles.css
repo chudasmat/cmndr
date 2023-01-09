@@ -98,7 +98,10 @@ body {
     flex-flow: column nowrap;
     gap: 16px;
     height: min-content;
-    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: min-content;
 }
 
@@ -119,15 +122,15 @@ body {
     gap: 10px;
     height: 150px;
     overflow: hidden;
-    padding: 20px;
+    padding: 17.5px;
     position: relative;
-    width: 590px;
+    width: 490px;
     max-width: 1200px;
     will-change: transform;
     overflow: auto;
     outline: none;
     resize: none;
-    font-size: 16px;
+    font-size: 16.5px;
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
@@ -328,7 +331,7 @@ button {
 
 
 .output-content {
-    margin-top: -2vh;
+    margin-top: -0.25vh;
     font-size: 1.75vh;
     outline: none;
     display: flex;
@@ -342,6 +345,11 @@ button {
     text-align: center;
     white-space: pre-line;
     color: rgba(255, 255, 255, 0.5);
+}
+
+.warning {
+    text-align: center;
+    color: #f2901f;
 }
 
 a:link {

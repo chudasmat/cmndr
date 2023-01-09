@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <meta property="og:title" content="cmndr" key="title"/>
-        <meta property="og:description" content="your wish is my command" key="description"/>
+        <meta property="og:description" content="Your best friend for Economics" key="description"/>
         <meta
           property="og:image"
           content="https://ibb.co/mCdts22"

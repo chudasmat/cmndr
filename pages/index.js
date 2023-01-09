@@ -43,13 +43,13 @@ const Home = () => {
             <h1>.cmndr.</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Your wish is my command</h2>
+            <h2>Your best friend for Economics</h2>
           </div>
         </div>
 
         <div className = "prompt-container">
           <textarea 
-          placeholder="Press 'Cook' or click Alt + O after completing your request."
+          placeholder="Press 'Cook' after completing your request."
           className = "prompt-box"
           value = {userInput}
           onChange = {onUserChangedText}
@@ -70,6 +70,9 @@ const Home = () => {
               <p>{apiOutput}</p>
             </div>
           </div>
+        </div>
+        <div className='warning'>
+          <p><b>Results are produced by AI, so may be inconsistent!</b></p>
         </div>
         <div className = "creds">
             <a href = "https://www.solo.to/trishan">Made by Trishan Chudasma</a>
