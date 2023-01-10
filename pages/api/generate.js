@@ -25,8 +25,7 @@ const generateAction = async (req, res) => {
 	
 	const secondPrompt = `
 	Generate a response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail.
- 	Question: ${basePromptOutput.text}
-	Answer: 
+ 	Question: ${basePromptOutput.text} 
  	`;
 
 	const secondPromptCompletion = await openai.createCompletion({
@@ -40,7 +39,7 @@ const generateAction = async (req, res) => {
 	const secondPromptOutput = secondPromptCompletion.data.choices.pop();
 	
 	const finalOutput = `${basePromptOutput}\n${secondPromptOutput}`;
-	res.status(200).json({ output: finalOutput });
+	res.status(200).json({ output: secondPromptOutput });
 };
 
 export default generateAction;
