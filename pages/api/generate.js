@@ -31,7 +31,7 @@ const generateAction = async (req, res) => {
 
 	const secondPromptCompletion = await openai.createCompletion({
 		model: "text-davinci-003",
-		prompt: `${secondPrompt}`
+		prompt: `${secondPrompt}`,
 		temperature: 0.8,
 		max_tokens: 1250,
 	});
