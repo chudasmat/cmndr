@@ -49,7 +49,7 @@ const Home = () => {
 
         <div className = "prompt-container">
           <textarea 
-          placeholder="Press 'Cook' after completing your request."
+          placeholder="Enter a topic or question, then click 'Cook'"
           className = "prompt-box"
           value = {userInput}
           onChange = {onUserChangedText}
