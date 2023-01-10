@@ -332,7 +332,7 @@ button {
 
 .output-content {
     margin-top: -0.25vh;
-    font-size: 1.75vh;
+    font-size: 14.5px;
     outline: none;
     display: flex;
     flex-direction: row;
