@@ -36,13 +36,8 @@ const generateAction = async (req, res) => {
 		max_tokens: 1000,
 	});
 
-
 	const secondPromptOutput = secondPromptCompletion.data.choices.pop();
-	const finalOutput = `${basePromptOutput}\n${secondPromptOutput}`;
-	console.log(`Base: ${basePromptOutput}`);
-	console.log(`Second: ${secondPromptOutput}`)
-	console.log(`Final: ${finalOutput}`)
-	res.status(200).json({ output: secondPromptOutput });
+	res.status(200).json({ output: basePromptOutput + "\n" + secondPromptOutput });
 };
 
 export default generateAction;
