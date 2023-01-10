@@ -24,7 +24,7 @@ const generateAction = async (req, res) => {
 	const basePromptOutput = baseCompletion.data.choices.pop();
 	
 	const secondPrompt = `
-	Print the following, ${basePromptOutput.text}. Below, generate an example exam response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail, but must not be too long.
+	Print the following question: ${basePromptOutput.text}. Then on a new line, generate an example exam response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail, but must not be too long.
  	Question -> ${basePromptOutput.text}
 	Answer -> 
  	`;
