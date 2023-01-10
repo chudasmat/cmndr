@@ -24,15 +24,16 @@ const generateAction = async (req, res) => {
 	const basePromptOutput = baseCompletion.data.choices.pop();
 	
 	const secondPrompt = `
-	Generate a response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail.
- 	Question: ${basePromptOutput.text} 
+	Print the following, ${basePromptOutput.text}. Below, generate an example exam response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail, but must not be too long.
+ 	Question -> ${basePromptOutput.text}
+	Answer -> 
  	`;
 
 	const secondPromptCompletion = await openai.createCompletion({
 		model: "text-davinci-003",
 		prompt: `${secondPrompt}`,
 		temperature: 0.8,
-		max_tokens: 1250,
+		max_tokens: 1000,
 	});
 
 
