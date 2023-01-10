@@ -22,28 +22,24 @@ const generateAction = async (req, res) => {
 	});
 
 	const basePromptOutput = baseCompletion.data.choices.pop();
-
-	// I build Prompt #2.
+	
 	const secondPrompt = `
 	Generate a response to the following GCSE Economics question, using the keywords "because", "leads to" and "therefore". The answer must be written with key economics vocabulary and with high detail.
  	Question: ${basePromptOutput.text}
 	Answer: 
  	`;
 
-	// I call the OpenAI API a second time with Prompt #2
 	const secondPromptCompletion = await openai.createCompletion({
 		model: "text-davinci-003",
-		prompt: `${secondPrompt}`,
-		// I set a higher temperature for this one. Up to you!
+		prompt: `${secondPrompt}`
 		temperature: 0.8,
-		// I also increase max_tokens.
 		max_tokens: 1250,
 	});
 
 
 	const secondPromptOutput = secondPromptCompletion.data.choices.pop();
 	
-	const finalOutput = `${basePromptOutput}\n${secondPromptOutput}`;
+	const finalOutput = `${basePromptOutput}` + "\n" + `${secondPromptOutput}`;
 	res.status(200).json({ output: finalOutput });
 };
 
